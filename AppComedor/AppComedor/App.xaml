@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComedor.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="Neucha" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Neucha-Regular.ttf#Neucha-Regular"/>
+            </OnPlatform>
+            <OnPlatform x:Key="Lilita" x:TypeArguments="x:String">
+                <On Platform="Android" Value="LilitaOne-Regular.ttf#LilitaOne-Regular"/>
+            </OnPlatform>
+            <OnPlatform x:Key="frank" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Franks.ttf#Franks"/>
+            </OnPlatform>
+            
+            <!--ESTILOS-->
+            <Style TargetType="Button" x:Key="StyleCategorias">
+                <Setter Property="BackgroundColor" Value="#1F86FF" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="TextTransform" Value="None" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

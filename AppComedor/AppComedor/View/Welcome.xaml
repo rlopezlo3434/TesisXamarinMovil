@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="AppComedor.View.Welcome"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Spacing="80" Padding="25,100,25,0">
+        <Label Text="Obtenga Su Comida En Menor Tiempo" FontSize="30" 
+               TextColor="Black" FontFamily="{StaticResource frank}" HorizontalTextAlignment="Center"/>
+        <Image Source="@drawable/logo_comedor.png"/>
+        <pancake:PancakeView BackgroundColor="Transparent" CornerRadius="20">
+            <pancake:PancakeView.Shadow>
+                <pancake:DropShadow Color="Black" BlurRadius="8" Offset="-1,-1" Opacity="1"/>
+            </pancake:PancakeView.Shadow>
+            <Button Text="Iniciar" Command="{Binding InicioCommand}" CornerRadius="19" BackgroundColor="#36C2F7" 
+                TextColor="White" FontAttributes="Bold" FontSize="20" 
+                HeightRequest="60" WidthRequest="315"/>
+        </pancake:PancakeView>
+        
+
+    </StackLayout>
+</ContentPage>

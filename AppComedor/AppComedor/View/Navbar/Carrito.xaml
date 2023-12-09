@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComedor.View.Navbar.Carrito"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="30,40" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Sus Pedidos" FontSize="23" TextColor="Black" FontAttributes="Bold" Grid.Column="1" 
+               VerticalOptions="Center" HorizontalOptions="Center" />
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,10,0,10">
+                    <Image Source="Banner"></Image>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <ScrollView HeightRequest="430" VerticalScrollBarVisibility="Never">
+
+                        <StackLayout>
+                            <Frame  CornerRadius="20"  HasShadow="True" Margin="2">
+                                <StackLayout Orientation="Vertical"  Spacing="0" Padding="-10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Source="arrozPollo" WidthRequest="90" HeightRequest="30" />
+                                        <Grid RowDefinitions="Auto, Auto, Auto" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label Text="Arroz con pollo" Grid.Row="0" FontSize="12" TextColor="Black"></Label>
+                                            <Label Text="S/ 15.00" Grid.Row="1" FontSize="15" TextColor="Black"></Label>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Grid RowDefinitions="*,*" />
+
+                                            <Grid ColumnDefinitions="Auto, Auto, Auto" Grid.Row="0">
+
+                                                <Button BackgroundColor="Beige" Text="-" CornerRadius="60" WidthRequest="30" HeightRequest="30" Grid.Column="0" ></Button>
+                                                <Label Text="1" Grid.Column="1" Margin="0,8,0,0"></Label>
+                                                <Button BackgroundColor="Beige" Grid.Column="2" Text="+" CornerRadius="60" WidthRequest="30" HeightRequest="40"></Button>
+
+                                            </Grid>
+                                            <Grid Grid.Row="1" HorizontalOptions="CenterAndExpand" >
+                                                <Image Source="basura.png"  WidthRequest="25" ></Image>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+
+                            </Frame>
+                            <Frame  CornerRadius="20"  HasShadow="True"  Margin="2" >
+                                <StackLayout Orientation="Vertical"  Spacing="0" Padding="-10">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Column="0" Source="arrozPollo" WidthRequest="90" HeightRequest="30" />
+                                        <Grid RowDefinitions="Auto, Auto, Auto" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label Text="Arroz con pollo" Grid.Row="0" FontSize="12" TextColor="Black"></Label>
+                                            <Label Text="S/ 15.00" Grid.Row="1" FontSize="15" TextColor="Black"></Label>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Grid RowDefinitions="Auto,*" />
+
+                                            <Grid ColumnDefinitions="Auto, Auto, Auto" Grid.Row="0">
+
+                                                <Button BackgroundColor="Beige" Text="-" CornerRadius="60" WidthRequest="30" HeightRequest="30" Grid.Column="0" ></Button>
+                                                <Label Text="1" Grid.Column="1" Margin="0,8,0,0"></Label>
+                                                <Button BackgroundColor="Beige" Grid.Column="2" Text="+" CornerRadius="60" WidthRequest="30" HeightRequest="40"></Button>
+
+                                            </Grid>
+                                            <Grid Grid.Row="1" HorizontalOptions="CenterAndExpand" >
+                                                <Image Source="basura.png"  WidthRequest="25" ></Image>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+
+                            </Frame>
+
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+                
+                <Grid Grid.Row="3" ColumnDefinitions="*, Auto" Margin="0,20,0,0" VerticalOptions="EndAndExpand">
+                    <Label Text="Total" Grid.Column="0" FontSize="20" TextColor="Black" HorizontalOptions="Start"></Label>
+                    <Label Text="S/ 34.00" Grid.Column="1" FontSize="20" TextColor="Black" HorizontalOptions="End"></Label>
+                </Grid>
+                <Grid Grid.Row="4" VerticalOptions="EndAndExpand" Margin="0,10,0,0">
+                    <Button Text="Ir a Pagar" BackgroundColor="#36C2F7" 
+                            TextColor="White" CornerRadius="19" WidthRequest="260" 
+                            FontSize="16" FontFamily="bold" HeightRequest="55" TextTransform="None"
+                            HorizontalOptions="Center"></Button>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

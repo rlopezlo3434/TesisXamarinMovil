@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComedor.View.Navbar.Home"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Name" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Bold"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+            <Style x:Key="SubName" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
+            <Style x:Key="ContainerGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="10,0,0,0"/>
+            </Style>
+            <Style x:Key="TitleDish" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="ContentDish" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="Price" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontFamily" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView >
+            <StackLayout>
+                <Grid HeightRequest="900">
+                    <Grid
+                Padding="20,44,20,0"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                    <!--Profile-->
+                    <Grid
+                        ColumnDefinitions="Auto,*,Auto">
+                            <Image x:Name="imgProfile" WidthRequest="50" HeightRequest="50">
+                            <Image.Clip>
+                                <EllipseGeometry
+                                    Center="30,30"   
+                                    RadiusX="45"
+                                    RadiusY="45"
+                                    />
+                            </Image.Clip>
+                        </Image>
+                        <Grid
+                            Grid.Column="1"
+                            RowSpacing="0"
+                            RowDefinitions="Auto,Auto"
+                            Padding="3"
+                            Style="{StaticResource ContainerGrid}">
+                            <Label x:Name="lblName"
+                                   Style="{StaticResource Name}"/>
+                            <Label/>
+                            <Label 
+                                Grid.Row="1"
+                                x:Name="lblEmail"
+                                   Style="{StaticResource SubName}"/>
+                            <Label/>
+                        </Grid>
+                        <Grid
+                            Grid.Column="2">
+                            <Image Source="@drawable/Love"/>
+                        </Grid>
+                    </Grid>
+                <!--SEARCH-->
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="*,Auto">
+                    <pancake:PancakeView BackgroundColor="#EBF9FF" 
+                                         Margin="0,12,0,0" CornerRadius="5" WidthRequest="315" HeightRequest="45">
+                        <SearchBar PlaceholderColor="#1F86FF" TextColor="#1F86FF" CancelButtonColor="#1F86FF"
+                                   Placeholder="Buscar" FontSize="18"  />
+                    </pancake:PancakeView>
+                </Grid>
+                <!--OFERTAS-->
+                <Grid
+                    Grid.Row="2"
+                    RowDefinitions="Auto,*">
+                    <Grid
+                        ColumnDefinitions="*,Auto">
+                        <pancake:PancakeView BackgroundColor="#EBF9FF" 
+                                         Margin="0,12,0,0" CornerRadius="20" WidthRequest="220" HeightRequest="142">
+                            <Image Source="@drawable/Oferta"/>
+                        </pancake:PancakeView>
+                    </Grid>
+                </Grid>
+                <!--categorias-->
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="Categorias" Padding="2,8,0,6" FontSize="16" FontAttributes="Bold" TextColor="Black" FontFamily="{StaticResource frank}" />
+                            <Button Grid.Column="1" Text="Todo" TextTransform = "None" Clicked="todopress" />
+                        </Grid>
+
+
+                        <Grid
+                    Grid.Row="4"
+                    RowDefinitions="*">
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                                 >
+                        <StackLayout Orientation="Horizontal" x:Name="stackLayout">
+                            
+                           
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+                <Grid
+                    Grid.Row="5"
+                    RowDefinitions="*,Auto" 
+                    Padding="0,10,0,0"
+                     >
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                                <StackLayout Orientation="Horizontal" Padding="3" x:Name="stackComida">
+                                    <StackLayout x:Name="stackDetalles">
+                                    </StackLayout>
+                                </StackLayout>
+                    </ScrollView>
+                </Grid>
+                <Grid
+                    Grid.Row="6"
+                    ColumnDefinitions="*,Auto">
+                    <Label Text="Los Mas Populares" Padding="2,8,0,6" FontSize="16" FontAttributes="Bold" TextColor="Black" FontFamily="{StaticResource frank}"/>
+                </Grid>
+                <Grid
+                    Grid.Row="7"
+                    RowDefinitions="*,Auto"
+                     >
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal" Padding="3">
+                            <Frame Opacity="10"  WidthRequest="100" HeightRequest="190" CornerRadius="8" 
+                                Margin="0,0,4,0" Padding="15,0,15,0" HasShadow="True">
+                                <Grid Grid.Row="1" Margin="-4,3,-4,-5"  Padding="0,10,0,0" >
+                                    <Image Source="@drawable/arrozPollo" WidthRequest="81" />
+                                    <StackLayout Grid.Row="1" Orientation="Vertical" Padding="0,4,0,0" Spacing="0" >
+                                        <Label Text="Arroz Con Pollo" Style="{StaticResource TitleDish}"/>
+                                        <Label Text="y Refresco" Style="{StaticResource ContentDish}" />
+                                        <Label Text="S/15.00" Style="{StaticResource Price}"  />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                            <Frame Opacity="10"  WidthRequest="100" HeightRequest="190" CornerRadius="8" 
+                                Margin="0,0,4,0" Padding="15,0,15,0" HasShadow="True">
+                                <Grid Grid.Row="1" Margin="-4,3,-4,-5"  Padding="0,10,0,0" >
+                                    <Image Source="@drawable/arrozPollo" WidthRequest="81" />
+                                    <StackLayout Grid.Row="1" Orientation="Vertical" Padding="0,4,0,0" Spacing="0" >
+                                        <Label Text="Lomo Saltado" Style="{StaticResource TitleDish}"/>
+                                        <Label Text="y Refresco" Style="{StaticResource ContentDish}" />
+                                        <Label Text="S/15.00" Style="{StaticResource Price}"  />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                            <Frame Opacity="10"  WidthRequest="100" HeightRequest="190" CornerRadius="8" 
+                                Margin="0,0,4,0" Padding="15,0,15,0" HasShadow="True">
+                                <Grid Grid.Row="1" Margin="-4,3,-4,-5"  Padding="0,10,0,0" >
+                                    <Image Source="@drawable/arrozPollo" WidthRequest="81"/>
+                                    <StackLayout Grid.Row="1" Orientation="Vertical" Padding="0,4,0,0" Spacing="0" >
+                                        <Label Text="Picante de Carne" Style="{StaticResource TitleDish}"/>
+                                        <Label Text="y Refresco" Style="{StaticResource ContentDish}" />
+                                        <Label Text="S/15.00" Style="{StaticResource Price}"  />
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </Grid>
+                </Grid>
+                
+            </StackLayout>
+            
+        </ScrollView> 
+    </ContentPage.Content>
+</ContentPage>

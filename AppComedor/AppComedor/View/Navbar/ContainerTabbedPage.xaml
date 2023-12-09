@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+ <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComedor.View.Navbar.ContainerTabbedPage"
+             xmlns:views="clr-namespace:AppComedor.View.Navbar"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False"
+             BarBackgroundColor="#F0F0F0"
+             >
+     
+    <TabbedPage.Children>
+        <NavigationPage Title="Inicio" IconImageSource="Home" >
+            <x:Arguments>
+                <views:Home />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Búsqueda" IconImageSource="Search">
+            <x:Arguments>
+                <views:Search />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Carrito" IconImageSource="Cart">
+            <x:Arguments>
+                <views:Carrito />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Ajustes" IconImageSource="Settings">
+            <x:Arguments>
+                <views:Settings />
+            </x:Arguments>
+        </NavigationPage>
+
+    </TabbedPage.Children>
+
+    
+</TabbedPage>

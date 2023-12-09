@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppComedor.View.AgregarProducto"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Frame Padding="0" HeightRequest="460">
+                        <Image Source="fondoComida" Aspect="AspectFill" />
+                    </Frame>
+                    <StackLayout>
+                        <Image Source="Back"
+                       HeightRequest="40" HorizontalOptions="Start" Margin="20,50,0,0"/>
+                        <Image Source="arrozPollo" Margin="0,100,0,0" HeightRequest="170"/>
+                        <Grid  Margin="250,0,20,0" >
+                            <Image Source="Minus" HorizontalOptions="Start" Margin="0"/>
+                            <Label Text="1"  HorizontalOptions="Center" FontAttributes="Bold" TextColor="White" FontSize="22" Padding="7"/>
+                            <Image Source="plus"  HorizontalOptions="End" />
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+                <Frame CornerRadius="25" VerticalOptions="FillAndExpand" Margin="0,100,0,0" HasShadow="True">
+                    <Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Column="0" HeightRequest="60" WidthRequest="180" VerticalOptions="Start" Spacing="0" Padding="10">
+                                <Label Text="Arroz con Pollo" FontAttributes="Bold" FontSize="20"/>
+                                <Label Text="Y Refresco" FontSize="18"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" HeightRequest="60" VerticalOptions="Start"  Padding="10">
+                                <Label Text="S/ 15.00" FontAttributes="Bold" FontSize="25"  HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                            
+                        </Grid>
+                        <Grid  Padding="8" Margin="0,85,0,120" BackgroundColor="Red" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" >
+                                <Label Text="Detalles" FontAttributes="Bold" FontSize="20"/>
+                                <Label Text="Descripcion del producto" FontSize="18"/>
+                            </StackLayout>
+                        </Grid>
+                        <pancake:PancakeView BackgroundColor="Transparent" CornerRadius="20" Margin="30,420,30,0" WidthRequest="25">
+                            <pancake:PancakeView.Shadow>
+                                <pancake:DropShadow Color="Black" BlurRadius="8" Offset="-1,-1" Opacity="1"/>
+                            </pancake:PancakeView.Shadow>
+                            <Button Text="Añadir al Carrito" Command="{Binding InicioCommand}" CornerRadius="19" BackgroundColor="#36C2F7" 
+                            TextColor="White" FontAttributes="Bold" FontSize="20" TextTransform="None"
+                             />                 
+                        </pancake:PancakeView>  
+                    </Grid>
+                    
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "971249388149",
+    "project_id": "apptecsup-b3d1c",
+    "storage_bucket": "apptecsup-b3d1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971249388149:android:e249ab0a32f3a565d3463c",
+        "android_client_info": {
+          "package_name": "com.companyname.appcomedor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971249388149-ueijukhcg6n5ve3o1jnc8iigjci2mprb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.appcomedor",
+            "certificate_hash": "fefdb6f0d5908de4b456636565c088b521a00a3e"
+          }
+        },
+        {
+          "client_id": "971249388149-am5h4jf7ftlpfbikogtn9c733k7benve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm5aYR8uOCMT25BHJgQgBCzL-upH1cePo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971249388149-a1atlsgq6tqre1hq9hhi28mbemjm1peu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
